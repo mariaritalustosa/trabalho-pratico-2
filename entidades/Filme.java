@@ -8,5 +8,11 @@ public class Filme {
     private String titulo;
     private int anoLancamento;
 
+    @ManyToOne
+    @JoinColumn(name = "diretor_id")
+    private Diretor diretor;
 
+    @ManyToOne
+    @JoinColumn(name = "distribuidora_id")
+    private Distribuidora distribuidora;
 }
