@@ -23,6 +23,8 @@ public class Filme {
     inverseJoinColumns = @JoinColumn(name= "genero_id"))
     private List<Genero> genero;
 
+    public Filme(){}
+
     public Long getId() {
         return id;
     }
