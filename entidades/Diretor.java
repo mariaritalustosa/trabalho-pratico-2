@@ -1,7 +1,10 @@
+import java.util.List;
+
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 
 public class Diretor {
     @Id
@@ -9,9 +12,8 @@ public class Diretor {
     private Long id;
     private String nome;
 
-    @ManyToOne
-    @JoinColumn(name="filme_id")
-    private Filme filme;
+    @OneToMany(mappedBy = "diretor")
+    private List<Filme> filmes;
 
     public Diretor(){}
 
